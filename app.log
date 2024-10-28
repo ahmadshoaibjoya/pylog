@@ -1,0 +1,14 @@
+WARNING - Program starts...
+WARNING - Program starts...
+WARNING - Program starts...
+ERROR - There is an exception:
+Traceback (most recent call last):
+  File "/home/ahmadshoaibjoya/Documents/python_tutorial/pylog/log_script1.py", line 15, in <module>
+    print(x)
+NameError: name 'x' is not defined
+WARNING - Program starts...
+ERROR - There is an exception:
+Traceback (most recent call last):
+  File "/home/ahmadshoaibjoya/Documents/python_tutorial/pylog/log_script1.py", line 15, in <module>
+    print(x)
+NameError: name 'x' is not defined

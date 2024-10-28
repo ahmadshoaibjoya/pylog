@@ -1,0 +1,7 @@
+Tip #1: Use dictConfig.
+Tip #2: Put all handlers/filters on the root logger.
+Tip #3: Don't use the root logger in your code.
+Tip #4: Make one non-root logger for each subcomponent in large application.
+        You don't need a logger (For Example: getLogger(__name__)) for every file.
+
+Tip #5: Store the log config in JSON or YMAL file.
