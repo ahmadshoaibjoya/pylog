@@ -24,9 +24,9 @@ log.info("The request sent...")
 log.error("There is an error...")
 log.warning("Close the program...")
 log.debug("The program is running...")
-
 log.critical("Something is happened...")
 
+print("Program is running...")
 for _ in range(10):
     open_url()
     time.sleep(3)
