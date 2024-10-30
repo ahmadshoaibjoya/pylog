@@ -1,3 +1,9 @@
+"""
+Create a Logger for the application and
+adding two Handlers to the Logger.
+The Handlers are StreamHandler and FileHandler.
+"""
+
 import logging
 import logging.handlers
 

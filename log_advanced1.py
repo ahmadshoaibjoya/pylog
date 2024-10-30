@@ -1,3 +1,8 @@
+"""
+Creates a Logger for the application and
+adding one Handler to the Logger.
+The Handler is StreamHandler
+"""
 import logging
 
 # Creates a Logger

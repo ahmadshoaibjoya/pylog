@@ -1,3 +1,14 @@
+Logging Levels:     Numeric value
+---------------------------------
+logging.NOTSET      0
+logging.DEBUG       10
+logging.INFO        20
+logging.WARNING     30
+logging.ERROR       40
+logging.CRITICAL    50
+
+
+
 |===========================|
 |   Logger (root)           |
 |---------------------------|
@@ -13,7 +24,7 @@
 |===========================|
               ||
               \/
-STDOUT, STDERR, a Logfile, Email
+STDOUT, STDERR, Logfile, Email
 
 
 
@@ -26,3 +37,7 @@ Tip #4: Make one non-root logger for each subcomponent in large application.
 Tip #5: Store the log config in JSON or YMAL file.
 Tip #6: Use ISO-8601 Timestamps format with timezone.
 Tip #7: Store presistent logs in JSON
+Tip #8  Add context with logging.info("message",extra={...})
+Tip #9: Log off the Main Thread
+
+

@@ -1,3 +1,6 @@
+"""
+A basic logging setup
+"""
 import logging.handlers
 import requests
 import logging
