@@ -27,7 +27,7 @@ logger.addHandler(handler1)
 # Creates another Handler for storing logs in a log file
 # handler2=logging.FileHandler('app.log')
 # If the app.log file reaches to 1KB, another backup file will be created. It creates backups until 3 file.
-handler2=logging.handlers.RotatingFileHandler('app.log',maxBytes=1000,backupCount=3)
+handler2=logging.handlers.RotatingFileHandler('logs/app.log',maxBytes=1000,backupCount=3)
 handler2.setLevel(logging.DEBUG)
 
 # Creates log message format

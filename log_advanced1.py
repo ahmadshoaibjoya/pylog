@@ -22,11 +22,11 @@ handler1.setFormatter(simpleformat)
 # Finally, adds the Handler to the created Logger
 logger.addHandler(handler1)
 
-logger.info("info message...")
-logger.error("error message...")
-logger.warning("warning message...")
 logger.debug("debug message...")
-logger.critical("critical message...")
+logger.info("info message...")
+logger.warning("warning message...")
+logger.error("error message...")
 logger.exception("exception message...")
+logger.critical("critical message...")
 
 

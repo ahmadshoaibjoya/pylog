@@ -15,18 +15,18 @@
     },
     "handlers": {
 
-        "stderr": {
+        "my_STDERR_Handler": {
             "class": "logging.StreamHandler",
             "level": "WARNING",
             "formatter": "mySimpleFormat",
             "stream": "ext://sys.stderr"
         },
 
-        "file": {
+        "My_File_Handler": {
             "class": "logging.handlers.RotatingFileHandler",
             "level": "DEBUG",
             "formatter": "myDetailedFormat",
-            "filename": "app.log",
+            "filename": "logs/app.log",
             "maxBytes": 10000,
             "backupCount": 3
         }
@@ -36,7 +36,7 @@
 
     "loggers": {
         "root": {
-            "handlers": ["stderr","file"],
+            "handlers": ["my_STDERR_Handler","My_File_Handler"],
             "level": "DEBUG"
         }
     }

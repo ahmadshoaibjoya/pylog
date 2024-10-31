@@ -1,0 +1,60 @@
+{
+    "version": 1,
+    "disable_existing_loggers": true,
+
+    "filters": {
+        "my_error_filter": {
+            "()": "__main__.MyLevelFilter",
+            "level_no": [40, 50]
+        },
+
+        "my_info_filter": {
+            "()": "__main__.MyLevelFilter",
+            "level_no": [10,20,30]
+        }
+    },
+
+    "formatters": {
+    
+        "mySimpleFormat": {
+            "format": "%(levelname)s - %(message)s"
+        },
+
+        "myDetailedFormat": {
+            "format": "[%(levelname)s|%(module)s|L%(lineno)d] %(asctime)s: %(message)s",
+            "datefmt": "%Y-%m-%dT%H:%M:%S%z"
+        }
+    
+    },
+
+    "handlers": {
+
+        "my_STDOUT_Handler": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "mySimpleFormat",
+            "stream": "ext://sys.stdout",
+            "filters": ["my_error_filter"]
+        },
+
+        "My_File_Handler": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "formatter": "myDetailedFormat",
+            "filename": "logs/app.log",
+            "maxBytes": 10000,
+            "backupCount": 3,
+            "filters": ["my_info_filter"]
+        }
+    
+    },
+
+    "loggers": {
+        "root": {
+            "handlers": ["my_STDOUT_Handler","My_File_Handler"],
+            "level": "DEBUG"
+            
+        }
+    }
+}
+

@@ -67,12 +67,12 @@ consoleHander.addFilter(myFilter("subtraction")) # Filter based on funcion name
 logger.addHandler(consoleHander)
 
 
-logger.info("info message...")
-logger.error("error message...")
-logger.warning("warning message...")
 logger.debug("debug message...")
-logger.critical("critical message...")
+logger.info("info message...")
+logger.warning("warning message...")
+logger.error("error message...")
 logger.exception("exception message...")
+logger.critical("critical message...")
 
 
 def addition():

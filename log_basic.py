@@ -7,7 +7,7 @@ import logging
 import time
 
 logging.basicConfig(
-    filename='app.log',
+    filename='logs/app.log',
     level=logging.DEBUG, 
     format='%(asctime)s - Logger Name: %(name)s - File Name: %(module)s - Function Name:%(funcName)s - %(levelname)s - %(message)s', 
     datefmt='%d-%b-%y %H:%M:%S'
@@ -23,10 +23,10 @@ def open_url():
     log.exception("An Exception is happened...")
 
 
-log.info("The request sent...")
-log.error("There is an error...")
-log.warning("Close the program...")
 log.debug("The program is running...")
+log.info("The request sent...")
+log.warning("Close the program...")
+log.error("There is an error...")
 log.critical("Something is happened...")
 
 print("Program is running...")
