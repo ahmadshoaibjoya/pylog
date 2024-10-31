@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+
+    "formatters": {
+        "myDetailedFormat":{
+            "format": "[%(levelname)s|%(module)s|L%(lineno)d] %(asctime)s: %(message)s",
+            "datefmt": "%Y-%m-%dT%H:%M:%S%z"
+        }
+
+    },
+
+    "handlers": {
+
+        "SysLog": {
+            "level": "DEBUG",
+            "class": "logging.handlers.SysLogHandler",
+            "formatter": "myDetailedFormat",
+            "address": ["logsN.papertrailapp.com", 44444]
+        },
+
+        "my_STDERR_Handler": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "myDetailedFormat",
+            "stream": "ext://sys.stderr"
+        }
+
+    },
+
+    "loggers": {
+        "root": {
+            "handlers": ["my_STDERR_Handler", "SysLog"],
+            "level": "DEBUG"
+            
+        }
+    }
+}
+
+
+
