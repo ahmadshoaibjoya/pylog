@@ -1,0 +1,73 @@
+{
+    "version": 1,
+    "disable_existing_loggers": true,
+
+    "filters": {
+        "my_error_filter": {
+            "()": "__main__.MyLevelFilter",
+            "level_no": [40, 50]
+        },
+
+        "my_info_filter": {
+            "()": "__main__.MyLevelFilter",
+            "level_no": [10,20,30]
+        }
+    },
+
+    "formatters": {
+    
+        "mySimpleFormat": {
+            "format": "%(levelname)s - %(message)s"
+        },
+
+        "myDetailedFormat": {
+            "format": "[%(levelname)s|%(module)s|L%(lineno)d] %(asctime)s: %(message)s",
+            "datefmt": "%Y-%m-%dT%H:%M:%S%z"
+        }
+    
+    },
+
+    "handlers": {
+
+        "My_STDOUT_Handler": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "mySimpleFormat",
+            "stream": "ext://sys.stdout",
+            "filters": ["my_error_filter"]
+        },
+
+        "My_File_Handler": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "formatter": "myDetailedFormat",
+            "filename": "logs/app.log",
+            "maxBytes": 10000,
+            "backupCount": 3,
+            "filters": ["my_info_filter"]
+        },
+
+        "My_Queue_Handler": {
+            "class": "logging.handlers.QueueHandler",
+            "queue": "ext://queue.Queue"
+        }
+    
+    },
+
+    "loggers": {
+        "root": {
+            "handlers": ["My_Queue_Handler"],
+            "level": "DEBUG"
+            
+        }
+    },
+
+    "My_Queue_Listener": {
+        "class": "logging.handlers.QueueListener",
+        "handlers": ["My_STDOUT_Handler", "My_File_Handler"],
+        "respect_handler_level": true
+
+    }
+
+}
+

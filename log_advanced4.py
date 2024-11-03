@@ -6,8 +6,8 @@ import logging
 from logging.handlers import SysLogHandler
 import time
 
-PAPERTRAIL_HOST = "logsN.papertrailapp.com" # Change the Host
-PAPERTRAIL_PORT = 44444 # Change the Port
+PAPERTRAIL_HOST = "logs3.papertrailapp.com" # Change the Host
+PAPERTRAIL_PORT = 17313 # Change the Port
 
 logger=logging.getLogger("my_app")
 logger.setLevel(logging.DEBUG)

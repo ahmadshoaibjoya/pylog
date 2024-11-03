@@ -16,7 +16,7 @@
             "level": "DEBUG",
             "class": "logging.handlers.SysLogHandler",
             "formatter": "myDetailedFormat",
-            "address": ["logsN.papertrailapp.com", 44444]
+            "address": ["logs3.papertrailapp.com", 17313]
         },
 
         "my_STDERR_Handler": {

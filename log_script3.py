@@ -17,7 +17,7 @@ logger=logging.getLogger("my_app")
 for _ in range(20):
     logger.debug("debug message...")
     time.sleep(1)
-    logger.info("info message...")
+    logger.info("Hello Ahmad Shoaib Joya...")
     time.sleep(1)
     logger.warning("warning message...")
     time.sleep(1)
