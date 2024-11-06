@@ -48,9 +48,10 @@ if __name__=="__main__":
             print(1/0)
         except:
             logger.exception("An exception is happened...")
-
+            
     my_function()
 
     logger.info("The program finished.")
+    
 
 
